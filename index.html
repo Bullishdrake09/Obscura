@@ -689,7 +689,7 @@
         .slide-cta span {
             position: relative;
             z-index: 1;
-            color: var(--color-secondary);
+            color: #fafff8;
             transition: color 0.4s ease;
         }
 
@@ -725,20 +725,6 @@
             display: flex;
             gap: 1rem;
             z-index: 10;
-        }
-
-        .slider-pagination-bullet {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .slider-pagination-bullet.active {
-            background-color: var(--color-gold);
-            transform: scale(1.2);
         }
 
         /* MAIN CONTENT */
@@ -1003,7 +989,7 @@
         }
 
         .testimonial-card:before {
-            content: """;
+            content: "";
             position: absolute;
             top: 10px;
             left: 20px;
@@ -1508,12 +1494,6 @@
                 </div>
             </div>
         </div>
-        
-        <div class="slider-pagination">
-            <div class="slider-pagination-bullet active"></div>
-            <div class="slider-pagination-bullet"></div>
-            <div class="slider-pagination-bullet"></div>
-        </div>
     </section>
 
     <!-- SERVICES -->
@@ -1675,12 +1655,10 @@
             setTimeout(() => {
                 heroSlider.classList.add('loaded');
             }, 500);
-
             // Mobile Navigation Toggle
             const mobileToggle = document.getElementById('mobileToggle');
             const mainNav = document.getElementById('mainNav');
             let isNavOpen = false;
-
             mobileToggle.addEventListener('click', function() {
                 isNavOpen = !isNavOpen;
                 if (isNavOpen) {
@@ -1693,7 +1671,6 @@
                     document.body.style.overflow = 'auto';
                 }
             });
-
             // Close mobile nav when clicking a link
             const navLinks = mainNav.querySelectorAll('a');
             navLinks.forEach(link => {
@@ -1704,10 +1681,8 @@
                     document.body.style.overflow = 'auto';
                 });
             });
-
             // Header scroll effect
             const header = document.getElementById('header');
-            
             window.addEventListener('scroll', function() {
                 if (window.scrollY > 50) {
                     header.classList.add('scrolled');
@@ -1715,20 +1690,16 @@
                     header.classList.remove('scrolled');
                 }
             });
-
             // Language Switching
             const langButtons = document.querySelectorAll('.lang-btn');
             const langContents = document.querySelectorAll('[class*="lang-"]');
             const footerLinks = document.querySelectorAll('.footer-links a');
-
             langButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const selectedLang = this.getAttribute('data-lang');
-
                     // Update active button
                     langButtons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
-
                     // Show/hide content
                     langContents.forEach(content => {
                         if (content.classList.contains(`lang-${selectedLang}`)) {
@@ -1737,7 +1708,6 @@
                             content.classList.remove('lang-active');
                         }
                     });
-                    
                     // Show/hide footer links based on language
                     footerLinks.forEach(link => {
                         if (link.classList.contains(`lang-${selectedLang}`)) {
@@ -1748,13 +1718,10 @@
                     });
                 });
             });
-            
             // Slider functionality — Show only one slide at a time
             const slides = document.querySelectorAll('.swiper-slide');
-            const bullets = document.querySelectorAll('.slider-pagination-bullet');
             let currentSlide = 0;
             let slideInterval;
-
             function showSlide(index) {
                 // Hide all slides
                 slides.forEach(slide => {
@@ -1762,16 +1729,13 @@
                     slide.style.opacity = '0';
                     slide.style.position = 'absolute'; // Ensure they stack
                 });
-
                 // Show current slide
                 slides[index].style.opacity = '1';
                 slides[index].classList.add('swiper-slide-active');
-
                 // Update bullets
                 bullets.forEach((bullet, i) => {
                     bullet.classList.toggle('active', i === index);
                 });
-
                 // Trigger content animation
                 const content = slides[index].querySelector('.slide-content');
                 if (content) {
@@ -1783,14 +1747,12 @@
                     }, 300);
                 }
             }
-
             function startSlider() {
                 slideInterval = setInterval(() => {
                     currentSlide = (currentSlide + 1) % slides.length;
                     showSlide(currentSlide);
                 }, 6000);
             }
-
             // Initialize slider
             slides.forEach(slide => {
                 slide.style.position = 'absolute';
@@ -1799,10 +1761,8 @@
                 slide.style.opacity = '0';
                 slide.style.transition = 'opacity 0.8s ease';
             });
-
             showSlide(0); // Show first slide immediately
             setTimeout(startSlider, 0); // Op 0 gezet omdat het optelde met de 6000 milliseconden interval.
-
             // Click on bullets to change slide
             bullets.forEach((bullet, index) => {
                 bullet.addEventListener('click', () => {
@@ -1812,10 +1772,8 @@
                     setTimeout(startSlider, 8000); // Resume after 8s
                 });
             });
-
             // Add animation on scroll
             const animateElements = document.querySelectorAll('.section, .card, .testimonial-card, .contact-info');
-            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -1826,42 +1784,34 @@
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             });
-            
             animateElements.forEach(el => {
                 observer.observe(el);
             });
-            
             // Add floating animation to decorative elements
             const floatingElements = document.querySelectorAll('.floating-element');
             floatingElements.forEach((el, index) => {
                 el.style.animationDelay = `${index * 0.5}s`;
             });
-
             // MOVE LANGUAGE SWITCHER TO DESKTOP HEADER
             function createHeaderLangSwitcher() {
                 // Check if already created
                 if (document.querySelector('.header-lang-switcher')) return;
-
                 const headerInner = document.querySelector('.header__inner');
                 const langSwitcherClone = document.createElement('div');
                 langSwitcherClone.className = 'header-lang-switcher flex items-center ml-8 hidden lg:flex';
-
                 langSwitcherClone.innerHTML = `
                     <button class="lang-btn active mx-1 px-2 py-1 text-xs border border-transparent hover:border-light-khaki rounded transition" data-lang="en">EN</button>
                     <span class="text-light-khaki mx-1">|</span>
                     <button class="lang-btn mx-1 px-2 py-1 text-xs border border-transparent hover:border-light-khaki rounded transition" data-lang="nl">NL</button>
                 `;
-
                 // Insert before nav or at end
                 headerInner.appendChild(langSwitcherClone);
-
                 // Re-attach event listeners to new buttons
                 const newLangButtons = langSwitcherClone.querySelectorAll('.lang-btn');
                 newLangButtons.forEach(btn => {
                     btn.addEventListener('click', function(e) {
                         e.stopPropagation();
                         const selectedLang = this.getAttribute('data-lang');
-
                         // Update active button in both locations
                         document.querySelectorAll('.lang-btn').forEach(b => {
                             b.classList.remove('active');
@@ -1869,7 +1819,6 @@
                                 b.classList.add('active');
                             }
                         });
-
                         // Show/hide content
                         document.querySelectorAll('[class*="lang-"]').forEach(content => {
                             if (content.classList.contains(`lang-${selectedLang}`)) {
@@ -1878,7 +1827,6 @@
                                 content.classList.remove('lang-active');
                             }
                         });
-                        
                         // Show/hide footer links based on language
                         document.querySelectorAll('.footer-links a').forEach(link => {
                             if (link.classList.contains(`lang-${selectedLang}`)) {
@@ -1890,7 +1838,6 @@
                     });
                 });
             }
-
             // Run on load and on resize (in case layout changes)
             createHeaderLangSwitcher();
             window.addEventListener('resize', createHeaderLangSwitcher);
