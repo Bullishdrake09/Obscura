@@ -131,18 +131,25 @@
             font-weight: 300;
         }
 
-        /* UTILITIES */
         .container {
             width: 100%;
             margin-right: auto;
             margin-left: auto;
             padding-right: 1.5rem;
             padding-left: 1.5rem;
+            max-width: 100%; /* Voorkomt overflow */
+            overflow-x: hidden; /* Extra zekerheid */
         }
 
         @media (min-width: 1024px) {
             .container {
                 max-width: 1200px;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px;
             }
         }
 
@@ -410,11 +417,15 @@
 
         .nav__item {
             margin: 1.25rem 0;
+            display: flex;
+            align-items: center;
         }
 
         @media (min-width: 1024px) {
             .nav__item {
                 margin: 0 0.75rem;
+                display: inline-flex;
+                align-items: center;
             }
         }
 
@@ -428,6 +439,7 @@
             padding: 0.75rem 0;
             font-family: 'Cinzel', serif;
             transition: all 0.3s ease;
+            display: inline-block;
         }
 
         .nav__link:before {
@@ -449,6 +461,8 @@
                 color: var(--color-primary);
                 font-size: 0.95rem;
                 padding: 0.5rem 0;
+                line-height: 1.5;
+                vertical-align: middle;
             }
 
             header.scrolled .nav__link {
@@ -756,6 +770,7 @@
             position: relative;
         }
 
+        /* Verwijder de grijze balk boven forensisch onderzoek */
         .section--light:before {
             content: '';
             position: absolute;
@@ -764,6 +779,13 @@
             width: 100%;
             height: 100%;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f9f7f4' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .section--light > .container {
+            position: relative;
+            z-index: 1;
         }
 
         .section__title {
@@ -801,10 +823,10 @@
         .grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2.5rem;
+            gap: 2rem; /* Verminderd van 2.5rem */
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 640px) {
             .grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -812,19 +834,49 @@
 
         @media (min-width: 1024px) {
             .grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        @media (min-width: 1200px) {
+        @media (min-width: 1280px) {
             .grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
 
+        /* Responsive aanpassingen voor kleinere schermen */
+        @media (max-width: 768px) {
+            .card {
+                padding: 1.5rem 1.25rem;
+                min-height: 180px;
+            }
+            
+            .card__title {
+                font-size: 1.1rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 1.25rem 1rem;
+                min-height: 160px;
+            }
+            
+            .card__title {
+                font-size: 1rem;
+                line-height: 1.4;
+            }
+        }
+
+        /* Update de bestaande .card styling */
         .card {
             background-color: var(--color-bg);
-            padding: 2.5rem;
+            padding: 2rem 1.5rem; /* Verminderd van 2.5rem */
             border: 1px solid rgba(0,0,0,0.05);
             transition: all 0.4s ease;
             position: relative;
@@ -834,6 +886,7 @@
             height: 100%;
             display: flex;
             flex-direction: column;
+            min-height: 200px; /* Voeg minimum hoogte toe */
         }
 
         .section--light .card {
@@ -870,13 +923,16 @@
 
         .card__title {
             font-family: 'Cinzel', serif;
-            font-size: 1.5rem;
-            margin-bottom: 1.25rem;
+            font-size: 1.2rem; /* Verminderd van 1.5rem */
+            margin-bottom: 1rem; /* Verminderd van 1.25rem */
             color: var(--color-primary);
             position: relative;
             padding-bottom: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.05em;
+            line-height: 1.3; /* Toegevoegd voor betere regelafstand */
+            word-wrap: break-word; /* Voorkomt dat tekst uit de card loopt */
+            overflow-wrap: break-word; /* Extra zekerheid */
         }
 
         .card__title:after {
@@ -1420,7 +1476,7 @@
     <!-- HEADER -->
     <header class="fixed w-full z-30" id="header">
         <div class="container header__inner">
-            <a href="/" class="font-title header__brand">Obscura</a>
+            <a href="#home" class="font-title header__brand">Obscura</a>
             <div class="header__toggle" id="mobileToggle">
                 <span></span>
                 <span></span>
@@ -1432,13 +1488,19 @@
                     <button class="lang-btn" data-lang="nl">NL</button>
                 </div>
                 <div class="nav__item">
-                    <a href="#services" class="nav__link">Services</a>
+                    <a href="#home" class="nav__link">Home</a>
                 </div>
                 <div class="nav__item">
-                    <a href="#approach" class="nav__link">Approach</a>
+                    <a href="#particulieren" class="nav__link lang-en">Private Clients</a>
+                    <a href="#particulieren" class="nav__link lang-nl lang-active">Particulieren</a>
                 </div>
                 <div class="nav__item">
-                    <a href="#testimonials" class="nav__link">Testimonials</a>
+                    <a href="#bedrijven" class="nav__link lang-en">Business</a>
+                    <a href="#bedrijven" class="nav__link lang-nl lang-active">Bedrijven</a>
+                </div>
+                <div class="nav__item">
+                    <a href="#forensisch" class="nav__link lang-en">Forensic Research</a>
+                    <a href="#forensisch" class="nav__link lang-nl lang-active">Forensisch onderzoek</a>
                 </div>
                 <div class="nav__item">
                     <a href="#contact" class="nav__link">Contact</a>
@@ -1448,7 +1510,7 @@
     </header>
 
     <!-- HERO SLIDER -->
-    <section class="hero-slider" id="heroSlider">
+    <section class="hero-slider" id="home">
         <div class="swiper-slide">
             <img src="https://cdn.wallpapersafari.com/88/4/g7f2vq.jpg" alt="Bruges canal at dusk" class="slide-image">
             <div class="slide-overlay">
@@ -1496,90 +1558,166 @@
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section section--light" id="services">
+    <!-- PARTICULIEREN (Private Clients) -->
+    <section class="section section--light" id="particulieren">
         <div class="container">
-            <h2 class="section__title lang-en lang-active">Investigation Services</h2>
-            <h2 class="section__title lang-nl">Onderzoeksdiensten</h2>
+            <h2 class="section__title lang-en lang-active">Private Clients</h2>
+            <h2 class="section__title lang-nl">Particulieren</h2>
             <div class="divider"></div>
             <div class="grid">
                 <div class="card has-hover-effect">
-                    <h3 class="card__title lang-en lang-active">Surveillance</h3>
-                    <h3 class="card__title lang-nl">Observatie</h3>
-                    <p class="lang-en lang-active">Discreet, professional surveillance to gather the evidence you need without being detected.</p>
-                    <p class="lang-nl">Discrete, professionele observatie om het benodigde bewijsmateriaal te verzamelen zonder op te vallen.</p>
-                    <a href="#contact" class="btn">
-                        <span class="lang-en lang-active">Inquire Now</span>
-                        <span class="lang-nl">Nu informeren</span>
-                    </a>
+                    <h3 class="card__title lang-en lang-active">Tracing Witnesses, Missing or Abducted Persons</h3>
+                    <h3 class="card__title lang-nl">Opsporen van getuigen, vermiste of ontvoerde personen</h3>
                 </div>
                 <div class="card has-hover-effect">
-                    <h3 class="card__title lang-en lang-active">Background Checks</h3>
-                    <h3 class="card__title lang-nl">Achtergrondonderzoek</h3>
-                    <p class="lang-en lang-active">Comprehensive investigations into personal or professional histories to ensure you're making informed decisions.</p>
-                    <p class="lang-nl">Uitgebreide onderzoeken naar persoonlijke of professionele geschiedenissen om ervoor te zorgen dat u geïnformeerde beslissingen neemt.</p>
-                    <a href="#contact" class="btn">
-                        <span class="lang-en lang-active">Inquire Now</span>
-                        <span class="lang-nl">Nu informeren</span>
-                    </a>
+                    <h3 class="card__title lang-en lang-active">Tracing Lost or Stolen Items and Animals</h3>
+                    <h3 class="card__title lang-nl">Opsporen van verloren of gestolen voorwerpen en dieren</h3>
                 </div>
                 <div class="card has-hover-effect">
-                    <h3 class="card__title lang-en lang-active">Missing Persons</h3>
-                    <h3 class="card__title lang-nl">Vermiste personen</h3>
-                    <p class="lang-en lang-active">Compassionate and determined efforts to locate missing loved ones with sensitivity and urgency.</p>
-                    <p class="lang-nl">Barmhartige en vastberaden inspanningen om vermist geliefden te vinden met gevoeligheid en urgentie.</p>
-                    <a href="#contact" class="btn">
-                        <span class="lang-en lang-active">Inquire Now</span>
-                        <span class="lang-nl">Nu informeren</span>
-                    </a>
+                    <h3 class="card__title lang-en lang-active">Civil Status Information Gathering</h3>
+                    <h3 class="card__title lang-nl">Informatiegaring burgerlijke staat</h3>
                 </div>
                 <div class="card has-hover-effect">
-                    <h3 class="card__title lang-en lang-active">Corporate Investigations</h3>
-                    <h3 class="card__title lang-nl">Bedrijfsgericht onderzoek</h3>
-                    <p class="lang-en lang-active">Protect your business from fraud, theft, or internal misconduct with our specialized corporate investigation services.</p>
-                    <p class="lang-nl">Bescherm uw bedrijf tegen fraude, diefstal of intern wangedrag met onze gespecialiseerde bedrijfsgerichte onderzoeksdiensten.</p>
-                    <a href="#contact" class="btn">
-                        <span class="lang-en lang-active">Inquire Now</span>
-                        <span class="lang-nl">Nu informeren</span>
-                    </a>
+                    <h3 class="card__title lang-en lang-active">Financial Status Investigation</h3>
+                    <h3 class="card__title lang-nl">Onderzoek vermogenstoestand van personen</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Morality Investigation</h3>
+                    <h3 class="card__title lang-nl">Moraliteitsonderzoek</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Shadowing and Following Persons</h3>
+                    <h3 class="card__title lang-nl">Schaduwen en volgen van personen</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Time Use Control During Visitation Rights</h3>
+                    <h3 class="card__title lang-nl">Controle tijdsgebruik tijdens bezoekrecht</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Alimony Investigation</h3>
+                    <h3 class="card__title lang-nl">Onderzoek alimentatie</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Pre-Marital Investigation</h3>
+                    <h3 class="card__title lang-nl">Voorhuwelijksonderzoek</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Stalking Verification</h3>
+                    <h3 class="card__title lang-nl">Verificatie van stalking</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Pedophilia Investigation</h3>
+                    <h3 class="card__title lang-nl">Onderzoek pedofilie</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Adultery Verification</h3>
+                    <h3 class="card__title lang-nl">Onderzoek vaststelling overspel</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- APPROACH -->
-    <section class="section section--dark" id="approach">
+    <!-- BEDRIJVEN (Business) -->
+    <section class="section section--dark" id="bedrijven">
         <div class="container">
-            <h2 class="section__title lang-en lang-active">My Methodical Approach</h2>
-            <h2 class="section__title lang-nl">Mijn Methodische Aanpak</h2>
+            <h2 class="section__title lang-en lang-active">Business Services</h2>
+            <h2 class="section__title lang-nl">Bedrijfsdiensten</h2>
             <div class="divider"></div>
-            <div class="text-center">
-                <div class="card" style="max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.08); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1);">
-                    <p class="lang-en lang-active mb-4" style="font-size: 1.1rem; line-height: 1.8;">I am a sole practitioner based in the historic city of Bruges. My strength lies in my independence, allowing me to offer completely personalized and confidential service. I don't have a team; I am your direct point of contact from the first consultation to the final report.</p>
-                    <p class="lang-nl mb-4" style="font-size: 1.1rem; line-height: 1.8;">Ik ben een eenmanszaak gevestigd in de historische stad Brugge. Mijn kracht ligt in mijn onafhankelijkheid, waardoor ik een volledig gepersonaliseerde en vertrouwelijke dienstverlening kan bieden. Ik heb geen team; ik ben uw directe aanspreekpunt vanaf het eerste consult tot het eindrapport.</p>
-                    <div class="section-divider"></div>
-                    <p class="lang-en lang-active" style="font-size: 1.1rem; line-height: 1.8;">Every case is unique. I take the time to understand your specific situation and tailor my methods to achieve the best possible outcome with the utmost discretion.</p>
-                    <p class="lang-nl" style="font-size: 1.1rem; line-height: 1.8;">Elke zaak is uniek. Ik neem de tijd om uw specifieke situatie te begrijpen en pas mijn methoden aan om het best mogelijke resultaat te bereiken met de grootst mogelijke discretie.</p>
+            <div class="grid">
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Corporate Fraud Detection</h3>
+                    <h3 class="card__title lang-nl">Opsporen van bedrijfsfraude</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Corporate Espionage</h3>
+                    <h3 class="card__title lang-nl">Bedrijfsspionage</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Time Use Control of Personnel</h3>
+                    <h3 class="card__title lang-nl">Controle tijdsgebruik van personeel</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Debtor Tracing</h3>
+                    <h3 class="card__title lang-nl">Opsporen van debiteuren</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Proof of Contract Breach</h3>
+                    <h3 class="card__title lang-nl">Bewijzen van contractbreuk</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Unfair Competition</h3>
+                    <h3 class="card__title lang-nl">Oneerlijke concurrentie</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Brand Fraud & Piracy</h3>
+                    <h3 class="card__title lang-nl">Merkenfraude & piraterij</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Transport Fraud</h3>
+                    <h3 class="card__title lang-nl">Transportfraude</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Morality Investigation</h3>
+                    <h3 class="card__title lang-nl">Moraliteitsonderzoek</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Theft Investigation</h3>
+                    <h3 class="card__title lang-nl">Diefstalonderzoek</h3>
+                </div>
+                <div class="card has-hover-effect">
+                    <h3 class="card__title lang-en lang-active">Damage Claims</h3>
+                    <h3 class="card__title lang-nl">Schadeclaims</h3>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
-    <section class="section section--light" id="testimonials">
+    <!-- FORENSISCH ONDERZOEK (Forensic Research) -->
+    <section class="section section--light" id="forensisch">
         <div class="container">
-            <h2 class="section__title lang-en lang-active">Client Testimonials</h2>
-            <h2 class="section__title lang-nl">Klantgetuigenissen</h2>
+            <h2 class="section__title lang-en lang-active">Forensic Research</h2>
+            <h2 class="section__title lang-nl">Forensisch Onderzoek</h2>
             <div class="divider"></div>
-            <div class="grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-content">"Obscura was instrumental in resolving a deeply personal matter for me. Their discretion and professionalism were beyond reproach. I am forever grateful."</p>
-                    <p class="testimonial-author">— Anonymous Client</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-content">"After weeks of dead ends, this detective found the crucial piece of information we needed in just days. Efficient, effective, and utterly discreet. Highly recommended."</p>
-                    <p class="testimonial-author">— Business Owner, Bruges</p>
-                </div>
+            
+            <!-- 1.1 Over Obscura -->
+            <div class="card" style="max-width: 900px; margin: 0 auto 3rem;">
+                <h3 class="card__title lang-en lang-active">1.1 About Obscura</h3>
+                <h3 class="card__title lang-nl">1.1 Over Obscura</h3>
+                <p class="lang-en lang-active">Obscura is rooted in Bruges and has a strong academic and practical background in criminology, social work, and judicial research. The private detective behind Obscura obtained a Master's degree in Criminology from Ghent University (2021), specializing in juvenile delinquency, youth rights, and victimology. Additionally, valuable experience was gained at the West Flanders Public Prosecutor's Office, the Local Police of Damme/Knokke-Heist, and the University of Oxford, where research skills were further refined.</p>
+                <p class="lang-en lang-active">Through a combination of analytical insight, discretion, empathy, and determination, Obscura developed a natural affinity for investigative work and truth-finding. This background forms the ideal foundation for establishing an independent private detective agency in West Flanders.</p>
+                
+                <p class="lang-nl">Obscura heeft zijn wortels in Brugge en beschikt over een sterke academische en praktijkgerichte achtergrond binnen criminologie, sociaal werk en justitieel onderzoek. De privédetective achter Obscura behaalde een Master in de Criminologie aan de Universiteit Gent (2021), met specialisatie in jeugdcriminaliteit, jeugdrechten en victimologie. Daarnaast werd waardevolle ervaring opgedaan bij het Parket West-Vlaanderen, de Lokale Politie Damme/Knokke-Heist en de Universiteit van Oxford, waar onderzoeksvaardigheden verder werden verfijnd.</p>
+                <p class="lang-nl">Door een combinatie van analytisch inzicht, discretie, empathie en vastberadenheid ontwikkelde Obscura een natuurlijke affiniteit met onderzoekswerk en waarheidsvinding. Deze achtergrond vormt de ideale basis voor de vestiging als zelfstandig privédetectivebureau in West-Vlaanderen.</p>
+            </div>
+
+            <!-- 1.2 Missie -->
+            <div class="card" style="max-width: 900px; margin: 0 auto 3rem;">
+                <h3 class="card__title lang-en lang-active">1.2 Mission</h3>
+                <h3 class="card__title lang-nl">1.2 Missie</h3>
+                <p class="lang-en lang-active">Obscura provides high-quality, discreet, and professional private detective work for individuals, businesses, government agencies, and legal professionals such as lawyers, police services, and public prosecutors. The mission is to provide clients with clarity, certainty, and reliable information in situations where truth, evidence, and objectivity are central. This is done with full respect for legislation, ethics, and the privacy of all parties involved. Obscura is legally licensed by the Minister of Internal Affairs in accordance with the Law of May 18, 2024.</p>
+                
+                <p class="lang-nl">Obscura biedt kwalitatief hoogwaardig, discreet en professioneel privédetectivewerk aan voor particulieren, bedrijven, overheidsdiensten en juridische professionals zoals advocaten, politiediensten en parketten. De missie is om cliënten duidelijkheid, zekerheid en betrouwbare informatie te bezorgen in situaties waar waarheid, bewijs en objectiviteit centraal staan. Dit gebeurt met volledig respect voor de wetgeving, deontologie en de privacy van alle betrokkenen. Obscura is wettelijk vergund door de Minister van Binnenlandse Zaken conform de Wet van 18 mei 2024.</p>
+            </div>
+
+            <!-- 1.3 Visie -->
+            <div class="card" style="max-width: 900px; margin: 0 auto;">
+                <h3 class="card__title lang-en lang-active">1.3 Vision</h3>
+                <h3 class="card__title lang-nl">1.3 Visie</h3>
+                <p class="lang-en lang-active">Obscura aims to become a reliable, accessible, and expert partner in the private detective sector in West Flanders. The goal is to create an agency where thoroughness, truth-finding, integrity, spontaneity, and transparency form the core of every investigation. From a strong criminological background, Obscura distinguishes itself through:</p>
+                <ul class="lang-en lang-active" style="margin: 1rem 0 1rem 2rem; text-align: left;">
+                    <li>an analytically substantiated approach;</li>
+                    <li>a personal and independent working method;</li>
+                    <li>a high degree of professionalism and discretion;</li>
+                    <li>accurate, legally usable reporting.</li>
+                </ul>
+                
+                <p class="lang-nl">Obscura wil uitgroeien tot een betrouwbare, toegankelijke en deskundige partner in de privédetectivesector in West-Vlaanderen. Er wordt gestreefd naar een bureau waarbij zorgvuldigheid, waarheidsvinding, integriteit, spontaniteit en transparantie de kern vormen van elk onderzoek. Vanuit een sterke criminologische achtergrond onderscheidt Obscura zich door:</p>
+                <ul class="lang-nl" style="margin: 1rem 0 1rem 2rem; text-align: left;">
+                    <li>een analytisch onderbouwde aanpak;</li>
+                    <li>een persoonlijke en zelfstandige werkwijze;</li>
+                    <li>een hoge mate van professionaliteit en discretie;</li>
+                    <li>nauwkeurige, juridisch bruikbare rapportering.</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -1626,15 +1764,17 @@
         <div class="footer__inner">
             <div class="footer-logo">Obscura</div>
             <div class="footer-links">
-                <a href="#services" class="lang-en lang-active">Investigation Services</a>
-                <a href="#approach" class="lang-en lang-active">Methodical Approach</a>
-                <a href="#testimonials" class="lang-en lang-active">Client Testimonials</a>
-                <a href="#contact" class="lang-en lang-active">Confidential Contact</a>
+                <a href="#home" class="lang-en lang-active">Home</a>
+                <a href="#particulieren" class="lang-en lang-active">Private Clients</a>
+                <a href="#bedrijven" class="lang-en lang-active">Business</a>
+                <a href="#forensisch" class="lang-en lang-active">Forensic Research</a>
+                <a href="#contact" class="lang-en lang-active">Contact</a>
                 
-                <a href="#services" class="lang-nl">Onderzoeksdiensten</a>
-                <a href="#approach" class="lang-nl">Methodische Aanpak</a>
-                <a href="#testimonials" class="lang-nl">Klantgetuigenissen</a>
-                <a href="#contact" class="lang-nl">Vertrouwelijk Contact</a>
+                <a href="#home" class="lang-nl">Home</a>
+                <a href="#particulieren" class="lang-nl">Particulieren</a>
+                <a href="#bedrijven" class="lang-nl">Bedrijven</a>
+                <a href="#forensisch" class="lang-nl">Forensisch onderzoek</a>
+                <a href="#contact" class="lang-nl">Contact</a>
             </div>
             <div class="social-links">
                 <a href="#" class="social-link" aria-label="LinkedIn">in</a>
@@ -1642,8 +1782,8 @@
                 <a href="#" class="social-link" aria-label="Secure Messaging">✓</a>
             </div>
             <div class="copyright">
-                <p class="lang-en lang-active">© 2024 Obscura. All rights reserved. Licensed Private Investigator in Belgium.</p>
-                <p class="lang-nl">© 2025 De Stille Waarnemer. Alle rechten voorbehouden. Gelicentieerd privédetective in België.</p>
+                <p class="lang-en lang-active">© 2025 Obscura. All rights reserved. Licensed Private Investigator in Belgium.</p>
+                <p class="lang-nl">© 2025 Obscura. Alle rechten voorbehouden. Gelicentieerd privédetective in België.</p>
             </div>
         </div>
     </footer>
@@ -1651,14 +1791,16 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Simulate slider loading
-            const heroSlider = document.getElementById('heroSlider');
+            const heroSlider = document.getElementById('home');
             setTimeout(() => {
                 heroSlider.classList.add('loaded');
             }, 500);
+            
             // Mobile Navigation Toggle
             const mobileToggle = document.getElementById('mobileToggle');
             const mainNav = document.getElementById('mainNav');
             let isNavOpen = false;
+            
             mobileToggle.addEventListener('click', function() {
                 isNavOpen = !isNavOpen;
                 if (isNavOpen) {
@@ -1671,6 +1813,7 @@
                     document.body.style.overflow = 'auto';
                 }
             });
+            
             // Close mobile nav when clicking a link
             const navLinks = mainNav.querySelectorAll('a');
             navLinks.forEach(link => {
@@ -1681,6 +1824,7 @@
                     document.body.style.overflow = 'auto';
                 });
             });
+            
             // Header scroll effect
             const header = document.getElementById('header');
             window.addEventListener('scroll', function() {
@@ -1690,16 +1834,20 @@
                     header.classList.remove('scrolled');
                 }
             });
+            
             // Language Switching
             const langButtons = document.querySelectorAll('.lang-btn');
             const langContents = document.querySelectorAll('[class*="lang-"]');
             const footerLinks = document.querySelectorAll('.footer-links a');
+            
             langButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const selectedLang = this.getAttribute('data-lang');
+                    
                     // Update active button
                     langButtons.forEach(btn => btn.classList.remove('active'));
                     this.classList.add('active');
+                    
                     // Show/hide content
                     langContents.forEach(content => {
                         if (content.classList.contains(`lang-${selectedLang}`)) {
@@ -1708,6 +1856,7 @@
                             content.classList.remove('lang-active');
                         }
                     });
+                    
                     // Show/hide footer links based on language
                     footerLinks.forEach(link => {
                         if (link.classList.contains(`lang-${selectedLang}`)) {
@@ -1718,25 +1867,22 @@
                     });
                 });
             });
-            // Slider functionality — Show only one slide at a time
+            
+            // Slider functionality
             const slides = document.querySelectorAll('.swiper-slide');
             let currentSlide = 0;
             let slideInterval;
+            
             function showSlide(index) {
-                // Hide all slides
                 slides.forEach(slide => {
                     slide.classList.remove('swiper-slide-active');
                     slide.style.opacity = '0';
-                    slide.style.position = 'absolute'; // Ensure they stack
+                    slide.style.position = 'absolute';
                 });
-                // Show current slide
+                
                 slides[index].style.opacity = '1';
                 slides[index].classList.add('swiper-slide-active');
-                // Update bullets
-                bullets.forEach((bullet, i) => {
-                    bullet.classList.toggle('active', i === index);
-                });
-                // Trigger content animation
+                
                 const content = slides[index].querySelector('.slide-content');
                 if (content) {
                     content.style.opacity = '0';
@@ -1747,13 +1893,14 @@
                     }, 300);
                 }
             }
+            
             function startSlider() {
                 slideInterval = setInterval(() => {
                     currentSlide = (currentSlide + 1) % slides.length;
                     showSlide(currentSlide);
                 }, 6000);
             }
-            // Initialize slider
+            
             slides.forEach(slide => {
                 slide.style.position = 'absolute';
                 slide.style.width = '100%';
@@ -1761,17 +1908,10 @@
                 slide.style.opacity = '0';
                 slide.style.transition = 'opacity 0.8s ease';
             });
-            showSlide(0); // Show first slide immediately
-            setTimeout(startSlider, 0); // Op 0 gezet omdat het optelde met de 6000 milliseconden interval.
-            // Click on bullets to change slide
-            bullets.forEach((bullet, index) => {
-                bullet.addEventListener('click', () => {
-                    clearInterval(slideInterval); // Stop auto if manual
-                    currentSlide = index;
-                    showSlide(currentSlide);
-                    setTimeout(startSlider, 8000); // Resume after 8s
-                });
-            });
+            
+            showSlide(0);
+            setTimeout(startSlider, 0);
+            
             // Add animation on scroll
             const animateElements = document.querySelectorAll('.section, .card, .testimonial-card, .contact-info');
             const observer = new IntersectionObserver((entries) => {
@@ -1784,18 +1924,15 @@
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
             });
+            
             animateElements.forEach(el => {
                 observer.observe(el);
             });
-            // Add floating animation to decorative elements
-            const floatingElements = document.querySelectorAll('.floating-element');
-            floatingElements.forEach((el, index) => {
-                el.style.animationDelay = `${index * 0.5}s`;
-            });
+            
             // MOVE LANGUAGE SWITCHER TO DESKTOP HEADER
             function createHeaderLangSwitcher() {
-                // Check if already created
                 if (document.querySelector('.header-lang-switcher')) return;
+                
                 const headerInner = document.querySelector('.header__inner');
                 const langSwitcherClone = document.createElement('div');
                 langSwitcherClone.className = 'header-lang-switcher flex items-center ml-8 hidden lg:flex';
@@ -1804,22 +1941,22 @@
                     <span class="text-light-khaki mx-1">|</span>
                     <button class="lang-btn mx-1 px-2 py-1 text-xs border border-transparent hover:border-light-khaki rounded transition" data-lang="nl">NL</button>
                 `;
-                // Insert before nav or at end
+                
                 headerInner.appendChild(langSwitcherClone);
-                // Re-attach event listeners to new buttons
+                
                 const newLangButtons = langSwitcherClone.querySelectorAll('.lang-btn');
                 newLangButtons.forEach(btn => {
                     btn.addEventListener('click', function(e) {
                         e.stopPropagation();
                         const selectedLang = this.getAttribute('data-lang');
-                        // Update active button in both locations
+                        
                         document.querySelectorAll('.lang-btn').forEach(b => {
                             b.classList.remove('active');
                             if (b.getAttribute('data-lang') === selectedLang) {
                                 b.classList.add('active');
                             }
                         });
-                        // Show/hide content
+                        
                         document.querySelectorAll('[class*="lang-"]').forEach(content => {
                             if (content.classList.contains(`lang-${selectedLang}`)) {
                                 content.classList.add('lang-active');
@@ -1827,7 +1964,7 @@
                                 content.classList.remove('lang-active');
                             }
                         });
-                        // Show/hide footer links based on language
+                        
                         document.querySelectorAll('.footer-links a').forEach(link => {
                             if (link.classList.contains(`lang-${selectedLang}`)) {
                                 link.style.display = 'inline-block';
@@ -1838,10 +1975,8 @@
                     });
                 });
             }
-            // Run on load and on resize (in case layout changes)
+            
             createHeaderLangSwitcher();
             window.addEventListener('resize', createHeaderLangSwitcher);
         });
-    </script>
-</body>
-</html>
+</script>
