@@ -7,24 +7,18 @@
     <title>Obscura | Private Detective in Bruges</title>
     <meta name="description" content="Discreet and effective private investigation services in the heart of Bruges. Trust Obscura for your most sensitive matters.">
     
-    <!-- Open Graph / Social Media Meta Tags (English) -->
     <meta property="og:site_name" content="Obscura">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en-BE">
     <meta property="og:title" content="Obscura | Private Detective Bruges">
     <meta property="og:url" content="https://yoursite.com">
     <meta property="og:description" content="Discreet and effective private investigation services in the heart of Bruges.">
-    <meta property="og:image" content="https://yoursite.com/img/placeholder-detective.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="628">
 
-    <!-- Favicon Links -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="/assets/favicon/site.webmanifest">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -32,14 +26,14 @@
         /* RESET & BASE STYLES */
         :root {
             --vh: 1vh;
-            --color-primary: #0a0a0a; /* Deeper Black */
-            --color-secondary: #4a5d42; /* Forest Green */
-            --color-accent: #8B7355; /* Khaki Brown */
-            --color-light-khaki: #C3B091; /* Light Khaki */
+            --color-primary: #0a0a0a;
+            --color-secondary: #b81817; /* Changed to red */
+            --color-accent: #8B7355;
+            --color-light-khaki: #C3B091;
             --color-text: #333;
-            --color-bg: #f9f7f4; /* Warm Off-White */
-            --color-dark-khaki: #3a4a32; /* Darker Forest Green */
-            --color-gold: #d4af37; /* Gold Accent */
+            --color-bg: #f9f7f4;
+            --color-dark-khaki: #3a4a32;
+            --color-gold: #d4af37;
             --transition-speed: 300ms;
             --shadow-light: 0 4px 6px rgba(0,0,0,0.1);
             --shadow-medium: 0 10px 15px rgba(0,0,0,0.1);
@@ -59,10 +53,9 @@
             font-style: normal;
         }
 
-    
         html {
             font-weight: 400;
-            font-size: 1rem;
+            font-size: 1.1rem; /* Slightly larger base font */
             color: var(--color-text);
             background-color: var(--color-bg);
             scroll-behavior: smooth;
@@ -103,7 +96,7 @@
         }
 
         .text-title {
-            font-size: 4rem;
+            font-size: 4.4rem;
             line-height: 1;
             letter-spacing: -0.02em;
             color: var(--color-primary);
@@ -113,29 +106,15 @@
 
         @media (min-width: 1024px) {
             .text-title {
-                font-size: 6rem;
+                font-size: 6.6rem;
             }
         }
 
-        .text-lg {
-            font-size: 1.125rem;
-        }
-
-        .text-md {
-            font-size: 1rem;
-        }
-
-        .text-sm {
-            font-size: 0.875rem;
-        }
-
-        .font-bold {
-            font-weight: 700;
-        }
-
-        .font-light {
-            font-weight: 300;
-        }
+        .text-lg { font-size: 1.24rem; }
+        .text-md { font-size: 1.1rem; }
+        .text-sm { font-size: 0.96rem; }
+        .font-bold { font-weight: 700; }
+        .font-light { font-weight: 300; }
 
         .container {
             width: 100%;
@@ -143,171 +122,54 @@
             margin-left: auto;
             padding-right: 1.5rem;
             padding-left: 1.5rem;
-            max-width: 100%; /* Voorkomt overflow */
-            overflow-x: hidden; /* Extra zekerheid */
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         @media (min-width: 1024px) {
-            .container {
-                max-width: 1200px;
-            }
+            .container { max-width: 1200px; }
         }
 
         @media (min-width: 1280px) {
-            .container {
-                max-width: 1280px;
-            }
+            .container { max-width: 1280px; }
         }
 
-        .hidden {
-            display: none !important;
-        }
-
-        .flex {
-            display: flex;
-        }
-
-        .items-center {
-            align-items: center;
-        }
-
-        .justify-between {
-            justify-content: space-between;
-        }
-
-        .justify-center {
-            justify-content: center;
-        }
-
-        .fixed {
-            position: fixed;
-        }
-
-        .relative {
-            position: relative;
-        }
-
-        .absolute {
-            position: absolute;
-        }
-
-        .top-0 {
-            top: 0;
-        }
-
-        .left-0 {
-            left: 0;
-        }
-
-        .right-0 {
-            right: 0;
-        }
-
-        .bottom-0 {
-            bottom: 0;
-        }
-
-        .z-30 {
-            z-index: 30;
-        }
-
-        .z-20 {
-            z-index: 20;
-        }
-
-        .z-10 {
-            z-index: 10;
-        }
-
-        .w-full {
-            width: 100%;
-        }
-
-        .h-screen {
-            height: 100vh;
-            height: calc(var(--vh) * 100);
-        }
-
-        .py-md {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-
-        .px-md {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-        }
-
-        .py-lg {
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-
-        .py-xl {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-        }
-
-        .px-xl {
-            padding-left: 3rem;
-            padding-right: 3rem;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .opacity-0 {
-            opacity: 0;
-        }
-
-        .opacity-100 {
-            opacity: 1;
-        }
-
-        .transition-all {
-            transition: all var(--transition-speed) ease-in-out;
-        }
-
-        .duration-500 {
-            transition-duration: 500ms;
-        }
-
-        .ease-in-out {
-            transition-timing-function: ease-in-out;
-        }
-
-        .pointer-events-none {
-            pointer-events: none;
-        }
-
-        .pointer-events-auto {
-            pointer-events: auto;
-        }
-
-        .cursor-pointer {
-            cursor: pointer;
-        }
-
-        .mb-2 {
-            margin-bottom: 0.5rem;
-        }
-
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-
-        .mt-2 {
-            margin-top: 0.5rem;
-        }
-
-        .mt-4 {
-            margin-top: 1rem;
-        }
-
-        .mt-6 {
-            margin-top: 1.5rem;
-        }
+        .hidden { display: none !important; }
+        .flex { display: flex; }
+        .items-center { align-items: center; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .fixed { position: fixed; }
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .top-0 { top: 0; }
+        .left-0 { left: 0; }
+        .right-0 { right: 0; }
+        .bottom-0 { bottom: 0; }
+        .z-30 { z-index: 30; }
+        .z-20 { z-index: 20; }
+        .z-10 { z-index: 10; }
+        .w-full { width: 100%; }
+        .h-screen { height: 100vh; height: calc(var(--vh) * 100); }
+        .py-md { padding-top: 1rem; padding-bottom: 1rem; }
+        .px-md { padding-left: 1.5rem; padding-right: 1.5rem; }
+        .py-lg { padding-top: 3rem; padding-bottom: 3rem; }
+        .py-xl { padding-top: 5rem; padding-bottom: 5rem; }
+        .px-xl { padding-left: 3rem; padding-right: 3rem; }
+        .text-center { text-align: center; }
+        .opacity-0 { opacity: 0; }
+        .opacity-100 { opacity: 1; }
+        .transition-all { transition: all var(--transition-speed) ease-in-out; }
+        .duration-500 { transition-duration: 500ms; }
+        .ease-in-out { transition-timing-function: ease-in-out; }
+        .pointer-events-none { pointer-events: none; }
+        .pointer-events-auto { pointer-events: auto; }
+        .cursor-pointer { cursor: pointer; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mt-4 { margin-top: 1rem; }
+        .mt-6 { margin-top: 1.5rem; }
 
         /* DECORATIVE ELEMENTS */
         .divider {
@@ -315,24 +177,6 @@
             height: 3px;
             background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
             margin: 1.5rem auto;
-        }
-
-        .section-divider {
-            position: relative;
-            text-align: center;
-            margin: 2rem auto;
-        }
-
-        .section-divider:after {
-            content: "❖";
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--color-bg);
-            padding: 0 10px;
-            color: var(--color-secondary);
-            font-size: 1.2rem;
         }
 
         /* HEADER & NAVIGATION */
@@ -363,9 +207,23 @@
             position: relative;
         }
 
+        /* Logo + brand wrapper */
+        .header__logo-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .header__logo-img {
+            height: 42px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
         .header__brand {
             font-family: 'CSDamon';
-            font-size: 1.5rem;
+            font-size: 1.65rem;
             font-weight: 700;
             color: var(--color-primary);
             letter-spacing: 0.05em;
@@ -396,7 +254,7 @@
             left: 0;
             width: 100%;
             height: 100vh;
-            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-dark-khaki) 100%);
+            background: linear-gradient(135deg, var(--color-primary) 0%, #1a0000 100%);
             padding: 6rem 1.5rem 2rem;
             z-index: 25;
             transform: translateY(-100%);
@@ -454,7 +312,7 @@
             left: -1.5rem;
             opacity: 0;
             transition: all 0.3s ease;
-            color: var(--color-gold);
+            color: var(--color-secondary);
         }
 
         .nav__link:hover:before {
@@ -465,7 +323,7 @@
         @media (min-width: 1024px) {
             .nav__link {
                 color: var(--color-primary);
-                font-size: 0.95rem;
+                font-size: 1.05rem;
                 padding: 0.5rem 0;
                 line-height: 1.5;
                 vertical-align: middle;
@@ -495,29 +353,16 @@
             transform-origin: center;
         }
 
-        .header__toggle span:nth-child(1) {
-            top: 0;
-        }
-
-        .header__toggle span:nth-child(2) {
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .header__toggle span:nth-child(3) {
-            bottom: 0;
-        }
+        .header__toggle span:nth-child(1) { top: 0; }
+        .header__toggle span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        .header__toggle span:nth-child(3) { bottom: 0; }
 
         .header__toggle.active span:nth-child(1) {
             transform: rotate(45deg);
             top: 50%;
             background-color: var(--color-bg);
         }
-
-        .header__toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
+        .header__toggle.active span:nth-child(2) { opacity: 0; }
         .header__toggle.active span:nth-child(3) {
             transform: rotate(-45deg);
             bottom: 50%;
@@ -525,9 +370,7 @@
         }
 
         @media (min-width: 1024px) {
-            .header__toggle {
-                display: none;
-            }
+            .header__toggle { display: none; }
         }
 
         .lang-switcher {
@@ -568,30 +411,27 @@
             font-weight: bold;
         }
 
-        /* HERO SLIDER */
+        /* HERO SLIDER — rewritten */
         .hero-slider {
             position: relative;
             width: 100%;
             height: 100vh;
             overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
             opacity: 0;
-            transition: opacity 800ms ease-in-out;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
         }
 
-        .hero-slider.loaded {
+        .slide.active {
             opacity: 1;
-        }
-
-        .swiper-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .swiper-slide {
-            width: 100%;
-            height: 100%;
-            position: relative;
+            pointer-events: auto;
         }
 
         .slide-image {
@@ -599,152 +439,7 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
-            filter: brightness(0.5) contrast(1.1) saturate(0.9);
-            transition: filter 0.5s ease, transform 0.5s ease;
-        }
-
-        .swiper-slide-active .slide-image {
-            transform: scale(1.05);
-        }
-
-        .slide-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-            color: var(--color-bg);
-            text-align: center;
-            background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
-        }
-
-        .slide-content {
-            max-width: 900px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .swiper-slide-active .slide-content {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: 0.3s;
-        }
-
-        .slide-title {
-            font-family: 'CSDamon';
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
-            color: var(--color-bg);
-            line-height: 1.1;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-        }
-
-        @media (min-width: 768px) {
-            .slide-title {
-                font-size: 4rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .slide-title {
-                font-size: 5rem;
-            }
-        }
-
-        .slide-subtitle {
-            font-size: 1.2rem;
-            font-weight: 300;
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            color: var(--color-light-khaki);
-            line-height: 1.7;
-            font-family: 'CSDamon';
-        }
-
-        @media (min-width: 768px) {
-            .slide-subtitle {
-                font-size: 1.35rem;
-            }
-        }
-
-        .slide-cta {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: transparent;
-            color: var(--color-bg);
-            font-family: 'CSDamon';
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            border: 2px solid var(--color-bg);
-            cursor: pointer;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 5;
-            margin-top: 1rem;
-            position: relative;
-        }
-
-        .slide-cta:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 100%;
-            background-color: var(--color-bg);
-            z-index: -1;
-            transition: width 0.4s ease;
-        }
-
-        .slide-cta span {
-            position: relative;
-            z-index: 1;
-            color: #fafff8;
-            transition: color 0.4s ease;
-        }
-
-        .slide-cta:hover {
-            color: var(--color-secondary);
-        }
-
-        .slide-cta:hover:before {
-            width: 100%;
-        }
-
-        .slide-cta:hover span {
-            color: var(--color-primary);
-        }
-        .slide-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        .slide-overlay {
-            pointer-events: none;
-        }
-
-        .slide-content * {
-            pointer-events: auto;
-        }
-
-        .slider-pagination {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 1rem;
-            z-index: 10;
+            filter: brightness(0.55) contrast(1.05) saturate(0.9);
         }
 
         /* MAIN CONTENT */
@@ -753,53 +448,43 @@
             position: relative;
         }
 
-        .section--dark {
-            background-color: var(--color-dark-khaki);
-            color: var(--color-bg);
-            position: relative;
-            overflow: hidden;
+        /* ── Private Clients ── warm cream */
+        .section--private {
+            background-color: #faf9ee;
+            color: var(--color-primary);
         }
 
-        .section--dark:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233a4a32' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        /* ── Business ── deep red */
+        .section--business {
+            background-color: #b81817;
+            color: #fff;
         }
 
+        /* ── Forensic ── near black */
+        .section--forensic {
+            background-color: #0c0c0c;
+            color: #f0ece4;
+        }
+
+        /* ── Contact ── deep red */
+        .section--contact {
+            background-color: #b81817;
+            color: #fff;
+        }
+
+        /* About section keeps light bg */
         .section--light {
             background-color: var(--color-bg);
             color: var(--color-primary);
             position: relative;
         }
 
-        /* Verwijder de grijze balk boven forensisch onderzoek */
-        .section--light:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f9f7f4' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .section--light > .container {
-            position: relative;
-            z-index: 1;
-        }
-
         .section__title {
             font-family: 'CSDamon';
-            font-size: 3.5rem;
+            font-size: 3.85rem;
             margin-bottom: 2.5rem;
             text-align: center;
-            color: var(--color-primary);
+            color: inherit;
             position: relative;
             padding-bottom: 1.5rem;
             font-weight: 700;
@@ -807,82 +492,50 @@
             text-transform: uppercase;
         }
 
-        .section--dark .section__title {
-            color: var(--color-bg);
-        }
+        .section--light .section__title { color: var(--color-primary); }
 
         .section__title:after {
             content: '';
             position: absolute;
             width: 100px;
             height: 3px;
-            background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+            background: linear-gradient(90deg, transparent, currentColor, transparent);
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+            opacity: 0.5;
         }
 
-        .section--dark .section__title:after {
-            background: linear-gradient(90deg, transparent, var(--color-light-khaki), transparent);
-        }
+        .section--private .section__title { color: var(--color-primary); }
+        .section--private .section__title:after { background: linear-gradient(90deg, transparent, var(--color-secondary), transparent); opacity: 1; }
+
+        .section--business .section__title { color: #fff; }
+        .section--forensic .section__title { color: #f0ece4; }
+        .section--contact .section__title { color: #fff; }
 
         .grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem; /* Verminderd van 2.5rem */
+            gap: 2rem;
         }
 
         @media (min-width: 640px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            .grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (min-width: 1024px) {
-            .grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+            .grid { grid-template-columns: repeat(3, 1fr); }
         }
 
         @media (min-width: 1280px) {
-            .grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
+            .grid { grid-template-columns: repeat(4, 1fr); }
         }
 
-        /* Responsive aanpassingen voor kleinere schermen */
-        @media (max-width: 768px) {
-            .card {
-                padding: 1.5rem 1.25rem;
-                min-height: 180px;
-            }
-            
-            .card__title {
-                font-size: 1.1rem;
-            }
-            
-            .grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .card {
-                padding: 1.25rem 1rem;
-                min-height: 160px;
-            }
-            
-            .card__title {
-                font-size: 1rem;
-                line-height: 1.4;
-            }
-        }
-
+        /* CARDS */
         .card {
-            background-color: var(--color-bg);
-            padding: 2rem 1.5rem; 
-            border: 1px solid rgba(0,0,0,0.05);
+            background-color: rgba(255,255,255,0.08);
+            padding: 2rem 1.5rem;
+            border: 1px solid rgba(255,255,255,0.12);
             transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
@@ -891,11 +544,27 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            min-height: 200px; 
+            min-height: 120px;
         }
 
+        /* Private clients — light cards */
+        .section--private .card,
         .section--light .card {
             background-color: #fff;
+            border-color: rgba(0,0,0,0.06);
+            color: var(--color-primary);
+        }
+
+        /* Business — semi-dark cards */
+        .section--business .card {
+            background-color: rgba(0,0,0,0.25);
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        /* Forensic — dark cards */
+        .section--forensic .card {
+            background-color: rgba(255,255,255,0.05);
+            border-color: rgba(255,255,255,0.1);
         }
 
         .card:before {
@@ -904,43 +573,42 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 5px;
+            height: 4px;
             background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.6s ease;
+            transition: transform 0.5s ease;
             z-index: 1;
         }
 
-        .card:hover:before {
-            transform: scaleX(1);
-        }
+        .card:hover:before { transform: scaleX(1); }
 
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             box-shadow: var(--shadow-heavy);
-        }
-
-        .section--dark .card {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.1);
         }
 
         .card__title {
             font-family: 'CSDamon';
-            font-size: 1.2rem; /* Verminderd van 1.5rem */
-            margin-bottom: 1rem; /* Verminderd van 1.25rem */
-            color: var(--color-primary);
+            font-size: 1.22rem;
+            margin-bottom: 0.75rem;
             position: relative;
             padding-bottom: 0.75rem;
             font-weight: 700;
             letter-spacing: 0.05em;
-            line-height: 1.3; /* Toegevoegd voor betere regelafstand */
-            word-wrap: break-word; /* Voorkomt dat tekst uit de card loopt */
-            overflow-wrap: break-word; /* Extra zekerheid */
+            line-height: 1.35;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
-        .card__title:after {
+        /* Private clients card title */
+        .section--private .card__title,
+        .section--light .card__title {
+            color: var(--color-primary);
+        }
+
+        .section--private .card__title:after,
+        .section--light .card__title:after {
             content: '';
             position: absolute;
             width: 50px;
@@ -951,22 +619,31 @@
             transition: width 0.3s ease;
         }
 
-        .card:hover .card__title:after {
-            width: 80px;
+        /* Business & Forensic card title */
+        .section--business .card__title,
+        .section--forensic .card__title {
+            color: #f0ece4;
         }
 
-        .section--dark .card__title {
-            color: var(--color-light-khaki);
+        .section--business .card__title:after,
+        .section--forensic .card__title:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(240,236,228,0.6), transparent);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
         }
 
-        .section--dark .card__title:after {
-            background: linear-gradient(90deg, var(--color-light-khaki), transparent);
-        }
+        .card:hover .card__title:after { width: 80px; }
 
         .card p {
             flex-grow: 1;
             margin-bottom: 1.5rem;
             line-height: 1.7;
+            font-size: 1rem;
         }
 
         .btn {
@@ -975,7 +652,7 @@
             background: transparent;
             color: var(--color-secondary);
             font-family: 'CSDamon';
-            font-size: 0.95rem;
+            font-size: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.2em;
             border: 2px solid var(--color-secondary);
@@ -991,8 +668,7 @@
         .btn:before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
             width: 0;
             height: 100%;
             background-color: var(--color-secondary);
@@ -1003,116 +679,48 @@
         .btn span {
             position: relative;
             z-index: 1;
-            color: rgba(10, 10, 10, 0.95);
+            color: rgba(10,10,10,0.95);
             transition: color 0.4s ease;
         }
 
-        .btn:hover {
-            color: var(--color-bg);
+        .btn:hover { color: var(--color-bg); }
+        .btn:hover:before { width: 100%; }
+
+        /* Contact section button */
+        .section--contact .btn {
+            color: #fff;
+            border-color: #fff;
         }
 
-        .btn:hover:before {
-            width: 100%;
-        }
-
-        .section--dark .btn {
-            color: var(--color-light-khaki);
-            border-color: var(--color-light-khaki);
-        }
-
-        .section--dark .btn:before {
-            background-color: var(--color-light-khaki);
-        }
-
-        .section--dark .btn span {
-            color: var(--color-primary);
-        }
-
-        /* TESTIMONIALS SPECIFIC */
-        .testimonial-card {
-            position: relative;
-            padding: 2.5rem;
-            background: rgba(255,255,255,0.9);
-            border-radius: 8px;
-            box-shadow: var(--shadow-light);
-            border-left: 4px solid var(--color-secondary);
-            transition: all 0.4s ease;
-        }
-
-        .section--dark .testimonial-card {
-            background: rgba(0,0,0,0.2);
-            border-left: 4px solid var(--color-gold);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-
-        .testimonial-card:before {
-            content: "";
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-family: 'CSDamon';
-            font-size: 5rem;
-            color: rgba(74, 93, 66, 0.1);
-            line-height: 1;
-            font-weight: 300;
-        }
-
-        .section--dark .testimonial-card:before {
-            color: rgba(195, 176, 145, 0.1);
-        }
-
-        .testimonial-content {
-            position: relative;
-            z-index: 1;
-            font-style: italic;
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-author {
-            font-family: 'CSDamon';
-            font-weight: 700;
-            color: var(--color-secondary);
-            text-align: right;
-            font-size: 1.1rem;
-        }
-
-        .section--dark .testimonial-author {
-            color: var(--color-light-khaki);
-        }
+        .section--contact .btn:before { background-color: rgba(255,255,255,0.2); }
+        .section--contact .btn span { color: #fff; }
 
         /* CONTACT SECTION */
         .contact-info {
-            background: rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.2);
             padding: 3rem;
             border-radius: 10px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
             transition: all 0.4s ease;
         }
 
         .contact-info:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.3);
         }
 
         .contact-method {
             margin: 1.5rem 0;
             padding: 1.5rem;
-            background: rgba(255,255,255,0.05);
+            background: rgba(0,0,0,0.15);
             border-radius: 8px;
             transition: all 0.3s ease;
-            border-left: 3px solid var(--color-gold);
+            border-left: 3px solid rgba(255,255,255,0.5);
         }
 
         .contact-method:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.25);
             transform: translateX(5px);
         }
 
@@ -1121,41 +729,32 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: var(--color-light-khaki);
+            color: rgba(255,255,255,0.7);
             margin-bottom: 0.5rem;
         }
 
         .contact-value {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--color-bg);
+            color: #fff;
             word-break: break-all;
         }
 
         .contact-location {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-style: italic;
             margin-top: 0.5rem;
-            color: var(--color-light-khaki);
+            color: rgba(255,255,255,0.75);
         }
 
         /* FOOTER */
         footer {
-            background: linear-gradient(0deg, var(--color-primary) 0%, var(--color-dark-khaki) 100%);
+            background: linear-gradient(0deg, var(--color-primary) 0%, #1a0000 100%);
             color: var(--color-bg);
             padding: 5rem 0 2.5rem;
             text-align: center;
             position: relative;
             overflow: hidden;
-        }
-
-        footer:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
         }
 
         .footer__inner {
@@ -1166,7 +765,7 @@
 
         .footer-logo {
             font-family: 'CSDamon';
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--color-light-khaki);
             margin-bottom: 1.5rem;
             display: inline-block;
@@ -1179,11 +778,10 @@
         .footer-logo:after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
+            bottom: 0; left: 0;
             width: 50px;
             height: 2px;
-            background: linear-gradient(90deg, var(--color-gold), transparent);
+            background: linear-gradient(90deg, var(--color-secondary), transparent);
         }
 
         .footer-links {
@@ -1202,7 +800,6 @@
             font-family: 'CSDamon';
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            font-size: 0.95rem;
         }
 
         .footer-links a:after {
@@ -1210,15 +807,12 @@
             position: absolute;
             width: 0;
             height: 1px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--color-gold);
+            bottom: 0; left: 0;
+            background-color: var(--color-secondary);
             transition: width 0.3s ease;
         }
 
-        .footer-links a:hover:after {
-            width: 100%;
-        }
+        .footer-links a:hover:after { width: 100%; }
 
         .social-links {
             margin: 2rem 0;
@@ -1243,7 +837,7 @@
 
         .social-link:hover {
             background: var(--color-secondary);
-            color: var(--color-bg);
+            color: #fff;
             transform: translateY(-5px);
             border-color: var(--color-secondary);
         }
@@ -1266,30 +860,29 @@
             display: block;
         }
 
+        /* Inline elements */
+        span.lang-en, span.lang-nl,
+        a.lang-en, a.lang-nl {
+            display: none;
+        }
+
+        span.lang-active, a.lang-active {
+            display: inline;
+        }
+
+        /* LIST items */
+        li.lang-en, li.lang-nl { display: none; }
+        li.lang-active { display: list-item; }
+
         /* CUSTOM SCROLLBAR */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: var(--color-secondary);
-            border-radius: 4px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background-color: var(--color-secondary); border-radius: 4px; }
 
         /* ANIMATIONS */
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .animate-in {
@@ -1298,153 +891,75 @@
         }
 
         /* FLOATING ELEMENTS */
-        .floating-element {
-            position: absolute;
-            opacity: 0.7;
-            z-index: 0;
-        }
+        .floating-element { position: absolute; opacity: 0.5; z-index: 0; pointer-events: none; }
 
         .floating-1 {
-            top: 20%;
-            left: 5%;
-            width: 80px;
-            height: 80px;
+            top: 20%; left: 5%;
+            width: 80px; height: 80px;
             border: 2px solid var(--color-secondary);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite;
         }
 
         .floating-2 {
-            bottom: 15%;
-            right: 7%;
-            width: 60px;
-            height: 60px;
-            background: var(--color-gold);
+            bottom: 15%; right: 7%;
+            width: 60px; height: 60px;
+            background: var(--color-secondary);
             clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
             animation: float 10s ease-in-out infinite 1s;
         }
 
         .floating-3 {
-            top: 35%;
-            right: 10%;
-            width: 40px;
-            height: 40px;
-            background: var(--color-secondary);
+            top: 35%; right: 10%;
+            width: 40px; height: 40px;
+            background: #8B7355;
             clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
             animation: float 12s ease-in-out infinite 2s;
         }
 
         @keyframes float {
-            0% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(180deg);
-            }
-            100% {
-                transform: translateY(0px) rotate(360deg);
-            }
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+            100% { transform: translateY(0px) rotate(360deg); }
         }
 
-        /* RESPONSIVE TWEAKS */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
-            .section {
-                padding: 4rem 0;
-            }
-            
-            .section__title {
-                font-size: 2.5rem;
-            }
-            
-            .slide-title {
-                font-size: 2.5rem;
-            }
-            
-            .card {
-                padding: 1.75rem;
-            }
-            
-            .grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
+            .section { padding: 4rem 0; }
+            .section__title { font-size: 2.75rem; }
+            .card { padding: 1.5rem 1.25rem; min-height: 100px; }
+            .card__title { font-size: 1.1rem; }
+            .grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .footer-links { flex-direction: column; gap: 1rem; }
         }
 
         @media (max-width: 480px) {
-            .slide-title {
-                font-size: 2rem;
-            }
-            
-            .slide-subtitle {
-                font-size: 1rem;
-            }
-            
-            .section__title {
-                font-size: 2rem;
-            }
+            .section__title { font-size: 2.2rem; }
+            .card__title { font-size: 1rem; line-height: 1.4; }
         }
 
-        /* HOVER EFFECTS FOR INTERACTIVE ELEMENTS */
-        .has-hover-effect {
-            position: relative;
-            transition: all 0.3s ease;
-        }
+        /* has-hover-effect */
+        .has-hover-effect { position: relative; transition: all 0.3s ease; }
 
-        .has-hover-effect:hover {
-            transform: scale(1.03);
-        }
-
-        /* SUBTLE PULSE ANIMATION FOR CTA */
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .pulse {
-            animation: pulse 2s infinite;
-        }
-
-        /* EYE CATCHER FOR DETECTIVE THEME */
-        .eye-catcher {
-            display: inline-block;
-            position: relative;
-        }
-
-        .eye-catcher:after {
-            content: "👁";
-            position: absolute;
-            top: -10px;
-            right: -15px;
-            font-size: 1.2rem;
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .eye-catcher:hover:after {
-            opacity: 1;
-            transform: scale(1.2);
-        }
-
-
+        /* HEADER LANG SWITCHER (desktop) */
         .header-lang-switcher {
             height: 100%;
             align-items: center;
         }
 
         .header-lang-switcher .lang-btn {
+            background: none;
+            border: 1px solid transparent;
             color: var(--color-primary);
-            border-color: transparent;
+            font-family: 'CSDamon';
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            margin: 0 0.3rem;
+            padding: 0.3rem 0.65rem;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
         }
 
         header.scrolled .header-lang-switcher .lang-btn {
@@ -1453,23 +968,37 @@
 
         .header-lang-switcher .lang-btn.active {
             background-color: var(--color-secondary);
-            color: var(--color-bg);
+            color: #fff;
             border-color: var(--color-secondary);
         }
 
         header.scrolled .header-lang-switcher .lang-btn.active {
-            background-color: var(--color-light-khaki);
-            color: var(--color-primary);
-            border-color: var(--color-light-khaki);
+            background-color: var(--color-secondary);
+            color: #fff;
+            border-color: var(--color-secondary);
         }
 
-        /* Show on desktop */
         @media (min-width: 1024px) {
-            .header-lang-switcher {
-                display: flex !important;
-            }
+            .header-lang-switcher { display: flex !important; }
         }
 
+        /* About card adjustments */
+        .section--light .card {
+            background-color: #fff;
+            border-color: rgba(0,0,0,0.06);
+        }
+
+        /* Eye catcher */
+        .eye-catcher { display: inline-block; position: relative; }
+        .eye-catcher:after {
+            content: "👁";
+            position: absolute;
+            top: -10px; right: -15px;
+            font-size: 1.2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        .eye-catcher:hover:after { opacity: 1; transform: scale(1.2); }
     </style>
 </head>
 <body>
@@ -1481,7 +1010,10 @@
     <!-- HEADER -->
     <header class="fixed w-full z-30" id="header">
         <div class="container header__inner">
-            <a href="#home" class="font-title header__brand">Obscura</a>
+            <a href="#home" class="header__logo-wrap">
+                <img src="logo.jpg" alt="Obscura logo" class="header__logo-img">
+                <span class="font-title header__brand">Obscura</span>
+            </a>
             <div class="header__toggle" id="mobileToggle">
                 <span></span>
                 <span></span>
@@ -1518,81 +1050,44 @@
         </div>
     </header>
 
-    <!-- HERO SLIDER -->
+    <!-- HERO SLIDER — clean rewrite -->
     <section class="hero-slider" id="home">
-        <div class="swiper-slide">
-            <img src="https://cdn.wallpapersafari.com/88/4/g7f2vq.jpg" alt="Bruges canal at dusk" class="slide-image">
-            <div class="slide-overlay">
-                <div class="slide-content">
-                    <h2 class="slide-title lang-en lang-active">OBSCURA</h2>
-                    <h2 class="slide-title lang-nl">OBSCURA</h2>
-                    <p class="slide-subtitle lang-en lang-active">Serving Bruges with the utmost confidentiality and precision.</p>
-                    <p class="slide-subtitle lang-nl">Actief in Brugge met de grootst mogelijke vertrouwelijkheid en precisie.</p>
-                    <a href="#contact" class="slide-cta pulse">
-                        <span class="lang-en lang-active">Get in Touch</span>
-                        <span class="lang-nl">Neem contact op</span>
-                    </a>
-                </div>
-            </div>
+        <div class="slide active">
+            <img src="obscura1.jpg" alt="Bruges" class="slide-image">
         </div>
-        <div class="swiper-slide">
-            <img src="https://img.goodfon.com/original/4953x3302/7/3c/gorod-briugge-belgiia-kanal-vecher-doma-mostik.jpg" alt="Vintage typewriter and magnifying glass" class="slide-image">
-            <div class="slide-overlay">
-                <div class="slide-content">
-                    <h2 class="slide-title lang-en lang-active">OBSCURA</h2>
-                    <h2 class="slide-title lang-nl">OBSCURA</h2>
-                    <p class="slide-subtitle lang-en lang-active">Meticulous investigation for your most sensitive personal or business matters.</p>
-                    <p class="slide-subtitle lang-nl">Zorgvuldig onderzoek voor uw meest gevoelige persoonlijke of zakelijke aangelegenheden.</p>
-                    <a href="#contact" class="slide-cta pulse">
-                        <span class="lang-en lang-active">Get in Touch</span>
-                        <span class="lang-nl">Neem contact op</span>
-                    </a>
-                </div>
-            </div>
+        <div class="slide">
+            <img src="obscura2.jpg" alt="Bruges canal" class="slide-image">
         </div>
-        <div class="swiper-slide">
-            <img src="https://wallpaper.forfun.com/fetch/d6/d63d7868a9b41adc548307132f983b3b.jpeg" alt="Silhouette in a doorway" class="slide-image">
-            <div class="slide-overlay">
-                <div class="slide-content">
-                    <h2 class="slide-title lang-en lang-active">OBSCURA</h2>
-                    <h2 class="slide-title lang-nl">OBSCURA</h2>
-                    <p class="slide-subtitle lang-en lang-active">When you need answers, you need someone who sees what others miss.</p>
-                    <p class="slide-subtitle lang-nl">Als u antwoorden nodig heeft, hebt u iemand nodig die ziet wat anderen missen.</p>
-                    <a href="#contact" class="slide-cta pulse">
-                        <span class="lang-en lang-active">Get in Touch</span>
-                        <span class="lang-nl">Neem contact op</span>
-                    </a>
-                </div>
-            </div>
+        <div class="slide">
+            <img src="obscura3.jpg" alt="Detective" class="slide-image">
+        </div>
+        <div class="slide">
+            <img src="obscura4.jpg" alt="Investigation" class="slide-image">
         </div>
     </section>
 
-    <!-- FORENSISCH ONDERZOEK (Forensic Research) -->
+    <!-- ABOUT -->
     <section class="section section--light" id="about">
         <div class="container">
             <h2 class="section__title lang-en lang-active">About Obscura</h2>
             <h2 class="section__title lang-nl">Over Obscura</h2>
             <div class="divider"></div>
-            
-            <!-- 1.1 Over Obscura -->
+
             <div class="card" style="max-width: 900px; margin: 0 auto 3rem;">
                 <p class="lang-en lang-active">Obscura is rooted in Bruges and has a strong academic and practical background in criminology, social work, and judicial research. The private detective behind Obscura obtained a Master's degree in Criminology from Ghent University (2021), specializing in juvenile delinquency, youth rights, and victimology. Additionally, valuable experience was gained at the West Flanders Public Prosecutor's Office, the Local Police of Damme/Knokke-Heist, and the University of Oxford, where research skills were further refined.</p>
-                <p class="lang-en lang-active">Through a combination of analytical insight, discretion, empathy, and determination, Obscura developed a natural affinity for investigative work and truth-finding. This background forms the ideal foundation for establishing an independent private detective agency in West Flanders.</p>
-                
+                <p class="lang-en lang-active" style="margin-top:1rem;">Through a combination of analytical insight, discretion, empathy, and determination, Obscura developed a natural affinity for investigative work and truth-finding. This background forms the ideal foundation for establishing an independent private detective agency in West Flanders.</p>
+
                 <p class="lang-nl">Obscura heeft zijn wortels in Brugge en beschikt over een sterke academische en praktijkgerichte achtergrond binnen criminologie, sociaal werk en justitieel onderzoek. De privédetective achter Obscura behaalde een Master in de Criminologie aan de Universiteit Gent (2021), met specialisatie in jeugdcriminaliteit, jeugdrechten en victimologie. Daarnaast werd waardevolle ervaring opgedaan bij het Parket West-Vlaanderen, de Lokale Politie Damme/Knokke-Heist en de Universiteit van Oxford, waar onderzoeksvaardigheden verder werden verfijnd.</p>
-                <p class="lang-nl">Door een combinatie van analytisch inzicht, discretie, empathie en vastberadenheid ontwikkelde Obscura een natuurlijke affiniteit met onderzoekswerk en waarheidsvinding. Deze achtergrond vormt de ideale basis voor de vestiging als zelfstandig privédetectivebureau in West-Vlaanderen.</p>
+                <p class="lang-nl" style="margin-top:1rem;">Door een combinatie van analytisch inzicht, discretie, empathie en vastberadenheid ontwikkelde Obscura een natuurlijke affiniteit met onderzoekswerk en waarheidsvinding. Deze achtergrond vormt de ideale basis voor de vestiging als zelfstandig privédetectivebureau in West-Vlaanderen.</p>
             </div>
 
-            <!-- 1.2 Missie -->
             <div class="card" style="max-width: 900px; margin: 0 auto 3rem;">
                 <h3 class="card__title lang-en lang-active">Mission</h3>
                 <h3 class="card__title lang-nl">Missie</h3>
                 <p class="lang-en lang-active">Obscura provides high-quality, discreet, and professional private detective work for individuals, businesses, government agencies, and legal professionals such as lawyers, police services, and public prosecutors. The mission is to provide clients with clarity, certainty, and reliable information in situations where truth, evidence, and objectivity are central. This is done with full respect for legislation, ethics, and the privacy of all parties involved. Obscura is legally licensed by the Minister of Internal Affairs in accordance with the Law of May 18, 2024.</p>
-                
                 <p class="lang-nl">Obscura biedt kwalitatief hoogwaardig, discreet en professioneel privédetectivewerk aan voor particulieren, bedrijven, overheidsdiensten en juridische professionals zoals advocaten, politiediensten en parketten. De missie is om cliënten duidelijkheid, zekerheid en betrouwbare informatie te bezorgen in situaties waar waarheid, bewijs en objectiviteit centraal staan. Dit gebeurt met volledig respect voor de wetgeving, deontologie en de privacy van alle betrokkenen. Obscura is wettelijk vergund door de Minister van Binnenlandse Zaken conform de Wet van 18 mei 2024.</p>
             </div>
 
-            <!-- 1.3 Visie -->
             <div class="card" style="max-width: 900px; margin: 0 auto;">
                 <h3 class="card__title lang-en lang-active">Vision</h3>
                 <h3 class="card__title lang-nl">Visie</h3>
@@ -1603,7 +1098,7 @@
                     <li>a high degree of professionalism and discretion;</li>
                     <li>accurate, legally usable reporting.</li>
                 </ul>
-                
+
                 <p class="lang-nl">Obscura wil uitgroeien tot een betrouwbare, toegankelijke en deskundige partner in de privédetectivesector in West-Vlaanderen. Er wordt gestreefd naar een bureau waarbij zorgvuldigheid, waarheidsvinding, integriteit, spontaniteit en transparantie de kern vormen van elk onderzoek. Vanuit een sterke criminologische achtergrond onderscheidt Obscura zich door:</p>
                 <ul class="lang-nl" style="margin: 1rem 0 1rem 2rem; text-align: left;">
                     <li>een analytisch onderbouwde aanpak;</li>
@@ -1615,8 +1110,8 @@
         </div>
     </section>
 
-    <!-- PARTICULIEREN (Private Clients) -->
-    <section class="section section--light" id="particulieren">
+    <!-- PARTICULIEREN -->
+    <section class="section section--private" id="particulieren">
         <div class="container">
             <h2 class="section__title lang-en lang-active">Private Clients</h2>
             <h2 class="section__title lang-nl">Particulieren</h2>
@@ -1674,12 +1169,12 @@
         </div>
     </section>
 
-    <!-- BEDRIJVEN (Business) -->
-    <section class="section section--dark" id="bedrijven">
+    <!-- BEDRIJVEN -->
+    <section class="section section--business" id="bedrijven">
         <div class="container">
             <h2 class="section__title lang-en lang-active">Business Services</h2>
             <h2 class="section__title lang-nl">Bedrijfsdiensten</h2>
-            <div class="divider"></div>
+            <div class="divider" style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);"></div>
             <div class="grid">
                 <div class="card has-hover-effect">
                     <h3 class="card__title lang-en lang-active">Corporate Fraud Detection</h3>
@@ -1706,8 +1201,8 @@
                     <h3 class="card__title lang-nl">Oneerlijke concurrentie</h3>
                 </div>
                 <div class="card has-hover-effect">
-                    <h3 class="card__title lang-en lang-active">Brand Fraud & Piracy</h3>
-                    <h3 class="card__title lang-nl">Merkenfraude & piraterij</h3>
+                    <h3 class="card__title lang-en lang-active">Brand Fraud &amp; Piracy</h3>
+                    <h3 class="card__title lang-nl">Merkenfraude &amp; piraterij</h3>
                 </div>
                 <div class="card has-hover-effect">
                     <h3 class="card__title lang-en lang-active">Transport Fraud</h3>
@@ -1729,12 +1224,12 @@
         </div>
     </section>
 
-    <!-- Forensisch -->
-    <section class="section section--dark" id="forensisch">
+    <!-- FORENSISCH -->
+    <section class="section section--forensic" id="forensisch">
         <div class="container">
             <h2 class="section__title lang-en lang-active">Forensic Services</h2>
             <h2 class="section__title lang-nl">Forensische diensten</h2>
-            <div class="divider"></div>
+            <div class="divider" style="background: linear-gradient(90deg, transparent, rgba(240,236,228,0.4), transparent);"></div>
             <div class="grid">
                 <div class="card has-hover-effect">
                     <h3 class="card__title lang-en lang-active">1</h3>
@@ -1753,33 +1248,33 @@
     </section>
 
     <!-- CONTACT -->
-    <section class="section section--dark" id="contact">
+    <section class="section section--contact" id="contact">
         <div class="container">
             <h2 class="section__title lang-en lang-active">Confidential Contact</h2>
             <h2 class="section__title lang-nl">Vertrouwelijk Contact</h2>
-            <div class="divider"></div>
+            <div class="divider" style="background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);"></div>
             <div class="text-center">
                 <div class="contact-info">
-                    <p class="lang-en lang-active mb-4" style="font-size: 1.1rem;">For a confidential consultation, please reach out. All inquiries are treated with the highest level of privacy.</p>
-                    <p class="lang-nl mb-4" style="font-size: 1.1rem;">Voor een vertrouwelijk consult, neem dan contact op. Alle aanvragen worden behandeld met het hoogste niveau van privacy.</p>
-                    
+                    <p class="lang-en lang-active mb-4" style="font-size: 1.15rem; color: rgba(255,255,255,0.9);">For a confidential consultation, please reach out. All inquiries are treated with the highest level of privacy.</p>
+                    <p class="lang-nl mb-4" style="font-size: 1.15rem; color: rgba(255,255,255,0.9);">Voor een vertrouwelijk consult, neem dan contact op. Alle aanvragen worden behandeld met het hoogste niveau van privacy.</p>
+
                     <div class="contact-method">
                         <div class="contact-label">Email</div>
                         <div class="contact-value eye-catcher">contact@Obscura.be</div>
                     </div>
-                    
+
                     <div class="contact-method">
                         <div class="contact-label">Phone</div>
                         <div class="contact-value">+32 XX XXX XX XX</div>
                     </div>
-                    
+
                     <div class="contact-method">
                         <div class="contact-label">Location</div>
                         <div class="contact-value">Bruges, Belgium</div>
                         <div class="contact-location lang-en lang-active">Historic Center - Discreet Office Location</div>
                         <div class="contact-location lang-nl">Historisch Centrum - Discrete Kantoorlocatie</div>
                     </div>
-                    
+
                     <a href="#" class="btn mt-6">
                         <span class="lang-en lang-active">Send Message</span>
                         <span class="lang-nl">Verstuur bericht</span>
@@ -1799,7 +1294,7 @@
                 <a href="#bedrijven" class="lang-en lang-active">Business</a>
                 <a href="#forensisch" class="lang-en lang-active">Forensic Research</a>
                 <a href="#contact" class="lang-en lang-active">Contact</a>
-                
+
                 <a href="#home" class="lang-nl">Home</a>
                 <a href="#particulieren" class="lang-nl">Particulieren</a>
                 <a href="#bedrijven" class="lang-nl">Bedrijven</a>
@@ -1820,32 +1315,34 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Simulate slider loading
-        const heroSlider = document.getElementById('home');
-        setTimeout(() => {
-            heroSlider.classList.add('loaded');
-        }, 500);
 
-        // Mobile Navigation Toggle
+        // ── SLIDER ──────────────────────────────────────────────────────────
+        const slides = document.querySelectorAll('.hero-slider .slide');
+        let current = 0;
+
+        function goToSlide(next) {
+            slides[current].classList.remove('active');
+            current = (next + slides.length) % slides.length;
+            slides[current].classList.add('active');
+        }
+
+        setInterval(function() {
+            goToSlide(current + 1);
+        }, 6000);
+
+        // ── MOBILE NAV TOGGLE ────────────────────────────────────────────────
         const mobileToggle = document.getElementById('mobileToggle');
-        const mainNav = document.getElementById('mainNav');
+        const mainNav      = document.getElementById('mainNav');
         let isNavOpen = false;
+
         mobileToggle.addEventListener('click', function() {
             isNavOpen = !isNavOpen;
-            if (isNavOpen) {
-                mainNav.classList.add('active');
-                mobileToggle.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            } else {
-                mainNav.classList.remove('active');
-                mobileToggle.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
+            mainNav.classList.toggle('active', isNavOpen);
+            mobileToggle.classList.toggle('active', isNavOpen);
+            document.body.style.overflow = isNavOpen ? 'hidden' : 'auto';
         });
 
-        // Close mobile nav when clicking a link
-        const navLinks = mainNav.querySelectorAll('a');
-        navLinks.forEach(link => {
+        mainNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mainNav.classList.remove('active');
                 mobileToggle.classList.remove('active');
@@ -1854,161 +1351,85 @@
             });
         });
 
-        // Header scroll effect
+        // ── HEADER SCROLL ────────────────────────────────────────────────────
         const header = document.getElementById('header');
         window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            header.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Language Switching Logic
-        const langButtons = document.querySelectorAll('.lang-btn');
-        const langContents = document.querySelectorAll('[class*="lang-"]');
-        const footerLinks = document.querySelectorAll('.footer-links a');
-
-        // Define the function to switch language
-        function switchLanguage(selectedLang) {
-            // Update active button (in both mobile and potential desktop switchers)
-            langButtons.forEach(btn => {
-                if (btn.getAttribute('data-lang') === selectedLang) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
+        // ── LANGUAGE SWITCHING ───────────────────────────────────────────────
+        function switchLanguage(lang) {
+            // Update all lang-btn active states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
             });
 
-            // Show/hide content based on language
-            langContents.forEach(content => {
-                if (content.classList.contains(`lang-${selectedLang}`)) {
-                    content.classList.add('lang-active');
-                } else {
-                    content.classList.remove('lang-active');
-                }
+            // Toggle visibility for lang-en / lang-nl elements
+            document.querySelectorAll('.lang-en, .lang-nl').forEach(el => {
+                const isMatch = el.classList.contains('lang-' + lang);
+                el.classList.toggle('lang-active', isMatch);
             });
 
-            // Show/hide footer links based on language
-            footerLinks.forEach(link => {
-                if (link.classList.contains(`lang-${selectedLang}`)) {
-                    link.style.display = 'inline-block';
-                } else if (link.classList.contains('lang-en') || link.classList.contains('lang-nl')) {
-                    link.style.display = 'none';
-                }
+            // Footer links specifically
+            document.querySelectorAll('.footer-links a').forEach(link => {
+                const isMatch = link.classList.contains('lang-' + lang);
+                link.style.display = isMatch ? 'inline-block' : 'none';
             });
         }
 
-        // Set Dutch as the initial language on page load
-        // This should happen after the initial HTML state is processed by the observer logic
-        // but before any user interaction.
-        switchLanguage('nl'); // Set initial language to Dutch
+        // Set Dutch as default
+        switchLanguage('nl');
 
-
-        // Attach event listeners to the buttons *after* setting the initial state
-        langButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const selectedLang = this.getAttribute('data-lang');
-                switchLanguage(selectedLang); // Use the defined function
+        // Attach to mobile lang buttons
+        document.querySelectorAll('.lang-switcher .lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                switchLanguage(this.getAttribute('data-lang'));
             });
         });
 
-        // Slider functionality
-        const slides = document.querySelectorAll('.swiper-slide');
-        let currentSlide = 0;
-        let slideInterval;
-        function showSlide(index) {
-            slides.forEach(slide => {
-                slide.classList.remove('swiper-slide-active');
-                slide.style.opacity = '0';
-                slide.style.position = 'absolute';
+        // ── DESKTOP LANG SWITCHER ────────────────────────────────────────────
+        function createHeaderLangSwitcher() {
+            if (document.querySelector('.header-lang-switcher')) return;
+            const headerInner = document.querySelector('.header__inner');
+            const wrap = document.createElement('div');
+            wrap.className = 'header-lang-switcher flex items-center';
+            wrap.style.marginLeft = '1.5rem';
+            wrap.innerHTML = `
+                <button class="lang-btn" data-lang="nl">NL</button>
+                <span style="color:#aaa; margin:0 .25rem;">|</span>
+                <button class="lang-btn" data-lang="en">EN</button>
+            `;
+            headerInner.appendChild(wrap);
+
+            wrap.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    switchLanguage(this.getAttribute('data-lang'));
+                });
             });
-            slides[index].style.opacity = '1';
-            slides[index].classList.add('swiper-slide-active');
-            const content = slides[index].querySelector('.slide-content');
-            if (content) {
-                content.style.opacity = '0';
-                content.style.transform = 'translateY(30px)';
-                setTimeout(() => {
-                    content.style.opacity = '1';
-                    content.style.transform = 'translateY(0)';
-                }, 300);
+
+            // Sync initial state
+            const current = document.querySelector('.lang-switcher .lang-btn.active');
+            if (current) {
+                const activeLang = current.getAttribute('data-lang');
+                wrap.querySelectorAll('.lang-btn').forEach(b => {
+                    b.classList.toggle('active', b.getAttribute('data-lang') === activeLang);
+                });
             }
         }
-        function startSlider() {
-            slideInterval = setInterval(() => {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }, 6000);
-        }
-        slides.forEach(slide => {
-            slide.style.position = 'absolute';
-            slide.style.width = '100%';
-            slide.style.height = '100%';
-            slide.style.opacity = '0';
-            slide.style.transition = 'opacity 0.8s ease';
-        });
-        showSlide(0);
-        setTimeout(startSlider, 0);
 
-        // Add animation on scroll
-        const animateElements = document.querySelectorAll('.section, .card, .testimonial-card, .contact-info');
+        createHeaderLangSwitcher();
+
+        // ── SCROLL ANIMATIONS ────────────────────────────────────────────────
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate-in');
                 }
             });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-        animateElements.forEach(el => {
-            observer.observe(el);
-        });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-        // MOVE LANGUAGE SWITCHER TO DESKTOP HEADER
-        function createHeaderLangSwitcher() {
-            if (document.querySelector('.header-lang-switcher')) return;
-            const headerInner = document.querySelector('.header__inner');
-            const langSwitcherClone = document.createElement('div');
-            langSwitcherClone.className = 'header-lang-switcher flex items-center ml-8 hidden lg:flex';
-            langSwitcherClone.innerHTML = `
-    <button class="lang-btn active mx-1 px-2 py-1 text-xs border border-transparent hover:border-light-khaki rounded transition" data-lang="en">EN</button>
-    <span class="text-light-khaki mx-1">|</span>
-    <button class="lang-btn mx-1 px-2 py-1 text-xs border border-transparent hover:border-light-khaki rounded transition" data-lang="nl">NL</button>
-    `;
-            headerInner.appendChild(langSwitcherClone);
-            const newLangButtons = langSwitcherClone.querySelectorAll('.lang-btn');
-            newLangButtons.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const selectedLang = this.getAttribute('data-lang');
-                    document.querySelectorAll('.lang-btn').forEach(b => {
-                        b.classList.remove('active');
-                        if (b.getAttribute('data-lang') === selectedLang) {
-                            b.classList.add('active');
-                        }
-                    });
-                    document.querySelectorAll('[class*="lang-"]').forEach(content => {
-                        if (content.classList.contains(`lang-${selectedLang}`)) {
-                            content.classList.add('lang-active');
-                        } else {
-                            content.classList.remove('lang-active');
-                        }
-                    });
-                    document.querySelectorAll('.footer-links a').forEach(link => {
-                        if (link.classList.contains(`lang-${selectedLang}`)) {
-                            link.style.display = 'inline-block';
-                        } else if (link.classList.contains('lang-en') || link.classList.contains('lang-nl')) {
-                            link.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        }
-        createHeaderLangSwitcher();
-        window.addEventListener('resize', createHeaderLangSwitcher);
+        document.querySelectorAll('.card, .contact-info').forEach(el => observer.observe(el));
     });
     </script>
 </body>
